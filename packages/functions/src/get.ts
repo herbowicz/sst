@@ -1,12 +1,12 @@
 import { Table } from "sst/node/table";
 import handler from "../../core/src/handler";
-import dynamoDb from "../../core/src/dynamodb";
+import dynamoDb from "./dynamodb";
 
 export const main = handler(async (event) => {
   const params = {
     TableName: Table.Notes.tableName,
     Key: {
-      userId: "123", // The id of the author
+      userId: event.requestContext.authorizer?.iam.cognitoIdentity.identityId,
       noteId: event?.pathParameters?.id, // The id of the note from the path
     },
   };
