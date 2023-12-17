@@ -18,13 +18,19 @@ importers:
 
   packages/core:
     specifiers:
+      '@types/aws-lambda': ^8.10.130
       '@types/node': ^20.10.4
+      aws-lambda: ^1.0.7
+      aws-sdk: ^2.1520.0
       sst: ^2.38.7
       vitest: ^1.0.4
       zod: ^3.22.4
     dependencies:
+      aws-lambda: 1.0.7
+      aws-sdk: 2.1520.0
       zod: 3.22.4
     devDependencies:
+      '@types/aws-lambda': 8.10.130
       '@types/node': 20.10.4
       sst: 2.38.7
       vitest: 1.0.4_@types+node@20.10.4
